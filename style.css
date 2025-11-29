@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f2efe4;
+}
+
+h1 {
+  margin: 20px;
+  color: #b22222;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.door {
+  background: #b22222;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 20px;
+  transition: transform 0.2s;
+}
+
+.door:hover {
+  transform: scale(1.1);
+}
+
+.opened {
+  background: #228b22;
+}
