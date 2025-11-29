@@ -51,20 +51,18 @@ h1 {
   background: #228b22;
 }
 
+#reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#reset:hover {
+  background: #222;
+}
 
 
