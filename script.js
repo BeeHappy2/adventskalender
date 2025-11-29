@@ -40,7 +40,13 @@ days.forEach(day => {
   });
 
   calendar.appendChild(door);
-  // Reset-Button Funktion
+
+});
+
+});
+
+});
+
 // Reset-Button Funktion mit Bestätigung
 const resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", () => {
@@ -49,10 +55,5 @@ resetButton.addEventListener("click", () => {
     localStorage.removeItem("openedDoors"); // gespeicherten Zustand löschen
     location.reload(); // Seite neu laden
   }
-});
-
-});
-
-});
 
 
