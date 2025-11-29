@@ -70,9 +70,34 @@ const bilder = {
   // usw. bis 24*/
 };
 
+// Popup-Elemente
+const popup = document.getElementById("popup");
+const popupImage = document.getElementById("popup-image");
+const popupClose = document.getElementById("popup-close");
 
+// Schließen-Funktion
+popupClose.addEventListener("click", () => {
+  popup.style.display = "none";
+});
 
+// Türchen-Click erweitern
+door.addEventListener("click", () => {
+  const today = new Date().getDate();
+  if (day <= today) {
+    door.classList.add("opened");
 
+    if (!openedDoors.includes(day)) {
+      openedDoors.push(day);
+      localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
+    }
 
+    // Popup mit Bild öffnen
+    if (bilder[day]) {
+      popupImage.src = bilder[day];
+      popup.style.display = "block";
+    }
 
-
+  } else {
+    alert("Noch nicht geöffnet!");
+  }
+});
