@@ -11,7 +11,7 @@ body {
 
 h1 {
   margin: 40px;
-  color: #ffffff;
+  color: #000000;
 }
 
 #calendar {
@@ -45,6 +45,7 @@ h1 {
 .opened {
   background: #228b22;
 }
+
 
 
 
