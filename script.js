@@ -6,8 +6,9 @@ resetButton.addEventListener("click", () => {
     location.reload(); // Seite neu laden
   }
 });
+
 const calendar = document.getElementById("calendar");
-// Reset-Button Funktion mit Bestätigung
+
 // Array mit den Zahlen 1 bis 24
 let days = Array.from({ length: 24 }, (_, i) => i + 1);
 
@@ -16,58 +17,16 @@ for (let i = days.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
   [days[i], days[j]] = [days[j], days[i]];
 }
+
 // Bereits geöffnete Türchen laden
 let openedDoors = JSON.parse(localStorage.getItem("openedDoors")) || [];
 
-// Türchen erzeugen
-days.forEach(day => {
-  const door = document.createElement("div");
-  door.className = "door";
-  door.textContent = day;
-
-  // Falls schon geöffnet → grün markieren
-  if (openedDoors.includes(day)) {
-    door.classList.add("opened");
-  }
-
-  door.addEventListener("click", () => {
-    const today = new Date().getDate();
-    if (day <= today) {
-      door.classList.add("opened");
-
-      // Fortschritt speichern
-      if (!openedDoors.includes(day)) {
-        openedDoors.push(day);
-        localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
-      }
-
-      // Bild anzeigen
-      if (bilder[day]) {
-        const img = document.createElement("img");
-        img.src = bilder[day];
-        img.alt = "Bild für Tag " + day;
-        img.style.maxWidth = "80%";   // Größe anpassen
-        img.style.marginTop = "20px";
-  
-        // Bild unter dem Kalender einfügen
-        document.body.appendChild(img);
-      } else {
-        alert("🎁 Überraschung für Tag " + day);
-      }
-    } else {
-      alert("Noch nicht geöffnet!");
-    }
-  });
-
-  calendar.appendChild(door);
-
-});
 // Zuordnung: Tag → Bilddatei
 const bilder = {
   1: "tuerchen1.jpg",
- /* 2: "bilder/tag2.jpg",
-  3: "bilder/tag3.jpg",
-  // usw. bis 24*/
+  //2: "bilder/tag2.jpg",
+  //3: "bilder/tag3.jpg",
+  // usw. bis 24
 };
 
 // Popup-Elemente
@@ -80,24 +39,37 @@ popupClose.addEventListener("click", () => {
   popup.style.display = "none";
 });
 
-// Türchen-Click erweitern
-door.addEventListener("click", () => {
-  const today = new Date().getDate();
-  if (day <= today) {
+// Türchen erzeugen
+days.forEach(day => {
+  const door = document.createElement("div");
+  door.className = "door";
+  door.textContent = day;
+
+  if (openedDoors.includes(day)) {
     door.classList.add("opened");
-
-    if (!openedDoors.includes(day)) {
-      openedDoors.push(day);
-      localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
-    }
-
-    // Popup mit Bild öffnen
-    if (bilder[day]) {
-      popupImage.src = bilder[day];
-      popup.style.display = "block";
-    }
-
-  } else {
-    alert("Noch nicht geöffnet!");
   }
+
+  door.addEventListener("click", () => {
+    const today = new Date().getDate();
+    if (day <= today) {
+      door.classList.add("opened");
+
+      if (!openedDoors.includes(day)) {
+        openedDoors.push(day);
+        localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
+      }
+
+      // Popup mit Bild öffnen
+      if (bilder[day]) {
+        popupImage.src = bilder[day];
+        popup.style.display = "block";
+      } else {
+        alert("🎁 Überraschung für Tag " + day);
+      }
+    } else {
+      alert("Noch nicht geöffnet!");
+    }
+  });
+
+  calendar.appendChild(door);
 });
