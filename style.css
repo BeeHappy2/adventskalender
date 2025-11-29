@@ -19,7 +19,7 @@ h1 {
   grid-template-columns: repeat(4, 1fr); /* immer 4 Spalten */
   gap: 10px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .door {
@@ -44,6 +44,7 @@ h1 {
 .opened {
   background: #228b22;
 }
+
 
 
 
