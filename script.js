@@ -5,6 +5,7 @@ resetButton.addEventListener("click", () => {
     localStorage.removeItem("openedDoors"); // gespeicherten Zustand löschen
     location.reload(); // Seite neu laden
   }
+});
 const calendar = document.getElementById("calendar");
 // Reset-Button Funktion mit Bestätigung
 // Array mit den Zahlen 1 bis 24
@@ -50,9 +51,6 @@ days.forEach(day => {
 
 });
 
-});
-
-});
 
 
 
