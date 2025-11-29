@@ -17,7 +17,7 @@ h1 {
 #calendar {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* immer 4 Spalten */
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
   margin-top: 40px;
 }
@@ -45,6 +45,7 @@ h1 {
 .opened {
   background: #228b22;
 }
+
 
 
 
