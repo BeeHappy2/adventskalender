@@ -24,7 +24,7 @@ let openedDoors = JSON.parse(localStorage.getItem("openedDoors")) || [];
 // Zuordnung: Tag → Bilddatei
 const bilder = {
   1: "tuerchen1.jpg",
-  //2: "bilder/tag2.jpg",
+  2: "tuerchen2.jpg",
   //3: "bilder/tag3.jpg",
   // usw. bis 24
 };
@@ -73,3 +73,4 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
