@@ -23,7 +23,7 @@ h1 {
 }
 
 .door {
-  background: rgba(178, 34, 34, 0.9);
+  background: rgba(178, 34, 34, 0.5);
   color: white;
   font-weight: bold;
   border-radius: 8px;
@@ -39,12 +39,13 @@ h1 {
 }
 
 .door.opened {
-  background: rgba(34, 139, 34, 0.9);
+  background: rgba(34, 139, 34, 0.4);
 }
 
 .opened {
   background: #228b22;
 }
+
 
 
 
