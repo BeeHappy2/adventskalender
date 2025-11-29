@@ -3,6 +3,11 @@ const calendar = document.getElementById("calendar");
 // Array mit den Zahlen 1 bis 24
 let days = Array.from({ length: 24 }, (_, i) => i + 1);
 
+// Array mischen (Fisher-Yates-Algorithmus)
+for (let i = days.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [days[i], days[j]] = [days[j], days[i]];
+}
 // Bereits geöffnete Türchen laden
 let openedDoors = JSON.parse(localStorage.getItem("openedDoors")) || [];
 
@@ -36,3 +41,4 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
