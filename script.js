@@ -10,7 +10,7 @@ resetButton.addEventListener("click", () => {
 const calendar = document.getElementById("calendar");
 
 // Array mit den Zahlen 1 bis 24
-let days = Array.from({ length: 24 }, (_, i) => i + 1);
+let days = Array.from({ length: 32 }, (_, i) => i + 1);
 
 // Array mischen (Fisher-Yates-Algorithmus)
 for (let i = days.length - 1; i > 0; i--) {
@@ -73,4 +73,5 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
 
