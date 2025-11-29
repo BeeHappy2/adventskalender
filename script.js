@@ -40,5 +40,19 @@ days.forEach(day => {
   });
 
   calendar.appendChild(door);
+  // Reset-Button Funktion
+// Reset-Button Funktion mit Bestätigung
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", () => {
+  const sicher = confirm("Bist du sicher, dass du den Fortschritt löschen möchtest?");
+  if (sicher) {
+    localStorage.removeItem("openedDoors"); // gespeicherten Zustand löschen
+    location.reload(); // Seite neu laden
+  }
 });
+
+});
+
+});
+
 
