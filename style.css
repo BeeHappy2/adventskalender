@@ -1,7 +1,11 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #f2efe4;
+  background-image: url("bilder/hintergrund.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  #background: #f2efe4;
 }
 
 h1 {
@@ -35,4 +39,5 @@ h1 {
 .opened {
   background: #228b22;
 }
+
 
