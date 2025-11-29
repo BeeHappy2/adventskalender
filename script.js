@@ -67,12 +67,13 @@ days.forEach(day => {
         alert("🎁 Überraschung für Tag " + day);
       }
     } else {
-      alert("🕯️ Das Türchen ist noch nicht dran. \n Du musst dich noch " + today - day + " Tage gedulden. 😉 ");
+      alert("🕯️ Das Türchen ist noch nicht dran. \n Du musst dich noch " + (day - today) + " Tage gedulden. 😉 ");
     }
   });
 
   calendar.appendChild(door);
 });
+
 
 
 
