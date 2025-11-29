@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  margin: 40px;
+  margin: 70px;
   color: #000000;
 }
 
@@ -45,6 +45,7 @@ h1 {
 .opened {
   background: #228b22;
 }
+
 
 
 
