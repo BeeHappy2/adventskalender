@@ -1,5 +1,12 @@
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", () => {
+  const sicher = confirm("Bist du sicher, dass du den Fortschritt löschen möchtest?");
+  if (sicher) {
+    localStorage.removeItem("openedDoors"); // gespeicherten Zustand löschen
+    location.reload(); // Seite neu laden
+  }
 const calendar = document.getElementById("calendar");
-
+// Reset-Button Funktion mit Bestätigung
 // Array mit den Zahlen 1 bis 24
 let days = Array.from({ length: 24 }, (_, i) => i + 1);
 
@@ -47,13 +54,7 @@ days.forEach(day => {
 
 });
 
-// Reset-Button Funktion mit Bestätigung
-const resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", () => {
-  const sicher = confirm("Bist du sicher, dass du den Fortschritt löschen möchtest?");
-  if (sicher) {
-    localStorage.removeItem("openedDoors"); // gespeicherten Zustand löschen
-    location.reload(); // Seite neu laden
-  }
+
+
 
 
