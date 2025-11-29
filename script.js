@@ -41,7 +41,19 @@ days.forEach(day => {
         localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
       }
 
-      alert("🎁 Überraschung für Tag " + day);
+      // Bild anzeigen
+      if (bilder[day]) {
+        const img = document.createElement("img");
+        img.src = bilder[day];
+        img.alt = "Bild für Tag " + day;
+        img.style.maxWidth = "80%";   // Größe anpassen
+        img.style.marginTop = "20px";
+  
+        // Bild unter dem Kalender einfügen
+        document.body.appendChild(img);
+      } else {
+        alert("🎁 Überraschung für Tag " + day);
+      }
     } else {
       alert("Noch nicht geöffnet!");
     }
@@ -50,6 +62,14 @@ days.forEach(day => {
   calendar.appendChild(door);
 
 });
+// Zuordnung: Tag → Bilddatei
+const bilder = {
+  1: "tuerchen1.jpg",
+ /* 2: "bilder/tag2.jpg",
+  3: "bilder/tag3.jpg",
+  // usw. bis 24*/
+};
+
 
 
 
