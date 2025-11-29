@@ -6,7 +6,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  background: #f2efe4;
 }
 
 h1 {
@@ -64,6 +63,7 @@ h1 {
 #reset:hover {
   background: #222;
 }
+
 
 
 
