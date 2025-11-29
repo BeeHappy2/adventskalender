@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url("bilder/hintergrund.png");
+  background-image: url("bilder/hintergrund.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,5 +39,6 @@ h1 {
 .opened {
   background: #228b22;
 }
+
 
 
