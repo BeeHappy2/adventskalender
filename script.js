@@ -25,8 +25,28 @@ let openedDoors = JSON.parse(localStorage.getItem("openedDoors")) || [];
 const bilder = {
   1: "tuerchen1.jpg",
   2: "tuerchen2.jpg",
-  //3: "bilder/tag3.jpg",
-  // usw. bis 24
+  //3: "tuerchen3.jpg",
+  //4: "tuerchen4.jpg",
+  //5: "tuerchen5.jpg",
+  //6: "tuerchen6.jpg",
+  //7: "tuerchen7.jpg",
+  //8: "tuerchen8.jpg",
+  //9: "tuerchen9.jpg",
+  //10: "tuerchen10.jpg",
+  //11: "tuerchen11.jpg",
+  //12: "tuerchen12.jpg",
+  //13: "tuerchen13.jpg",
+  //14: "tuerchen14.jpg",
+  //15: "tuerchen15.jpg",
+  //16: "tuerchen16.jpg",
+  //17: "tuerchen17.jpg",
+  //18: "tuerchen18.jpg",
+  //19: "tuerchen19.jpg",
+  //20: "tuerchen20.jpg",
+  //21: "tuerchen21.jpg",
+  //22: "tuerchen22.jpg",
+  //23: "tuerchen23.jpg",
+  //24: "tuerchen24.jpg",
 };
 
 // Popup-Elemente
@@ -73,6 +93,7 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
 
 
 
