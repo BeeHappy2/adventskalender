@@ -26,10 +26,10 @@ const bilder = {
   1: "tuerchen1.jpg",
   2: "tuerchen2.jpg",
   3: "tuerchen3.jpg",
-  //4: "tuerchen4.jpg",
-  //5: "tuerchen5.jpg",
-  //6: "tuerchen6.jpg",
-  //7: "tuerchen7.jpg",
+  4: "tuerchen4.jpg",
+  5: "tuerchen5.jpg",
+  6: "tuerchen6.jpg",
+  7: "tuerchen7.jpg",
   //8: "tuerchen8.jpg",
   //9: "tuerchen9.jpg",
   //10: "tuerchen10.jpg",
@@ -93,6 +93,7 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
 
 
 
