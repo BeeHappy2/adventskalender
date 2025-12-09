@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url("hintergrund.jpg");
+  background-image: url("Bild/hintergrund.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ h1 {
 
 #calendar {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* immer 4 Spalten */
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   justify-content: center;
   margin-top: 40px;
@@ -66,14 +66,14 @@ h1 {
 
 /* Popup-Hintergrund */
 .popup {
-  display: none; /* unsichtbar bis geöffnet */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7); /* halbtransparentes Schwarz */
+  background: rgba(0,0,0,0.7);
 }
 
 /* Popup-Inhalt */
@@ -91,6 +91,17 @@ h1 {
 /* Bild im Popup */
 #popup-image {
   max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Video im Popup */
+#popup-video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* YouTube im Popup */
+#popup-youtube {
   border-radius: 8px;
 }
 
