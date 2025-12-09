@@ -2,8 +2,8 @@ const resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", () => {
   const sicher = confirm("Bist du sicher, dass du den Fortschritt löschen möchtest?");
   if (sicher) {
-    localStorage.removeItem("openedDoors"); // gespeicherten Zustand löschen
-    location.reload(); // Seite neu laden
+    localStorage.removeItem("openedDoors");
+    location.reload();
   }
 });
 
@@ -21,21 +21,21 @@ for (let i = days.length - 1; i > 0; i--) {
 // Bereits geöffnete Türchen laden
 let openedDoors = JSON.parse(localStorage.getItem("openedDoors")) || [];
 
-// Zuordnung: Tag → Bilddatei
-const bilder = {
-  1: "Bild/tuerchen1.jpg",
-  2: "Bild/tuerchen2.jpg",
-  3: "Bild/tuerchen3.jpg",
-  4: "Bild/tuerchen4.jpg",
-  5: "Bild/tuerchen5.jpg",
-  6: "Bild/tuerchen6.jpg",
-  7: "Bild/tuerchen7.jpg",
-  8: "Bild/tuerchen8.jpg",
-  9: "Bild/tuerchen9.jpg",
-  //10: "Bild/tuerchen10.jpg",
-  //11: "Bild/tuerchen11.jpg",
-  //12: "Bild/tuerchen12.jpg",
-  //13: "Bild/tuerchen13.jpg",
+// Inhalte: Bild oder Video
+const inhalte = {
+  1: { type: "image", src: "Bild/tuerchen1.jpg" },
+  2: { type: "image", src: "Bild/tuerchen2.jpg" },
+  3: { type: "image", src: "Bild/tuerchen3.jpg" },
+  4: { type: "image", src: "Bild/tuerchen4.jpg" },
+  5: { type: "image", src: "Bild/tuerchen5.jpg" },
+  6: { type: "image", src: "Bild/tuerchen6.jpg" },
+  7: { type: "image", src: "Bild/tuerchen7.jpg" },
+  8: { type: "image", src: "Bild/tuerchen8.jpg" },
+  9: { type: "image", src: "Bild/tuerchen9.jpg" },
+ 10: { type: "video", src: "Videos/tuerchen10.mp4" },
+ 11: { type: "image", src: "Bild/tuerchen11.jpg" },
+ 12: { type: "image", src: "Bild/tuerchen12.jpg" },
+ 13: { type: "image", src: "Bild/tuerchen13.jpg" },
   //14: "Bild/tuerchen14.jpg",
   //15: "Bild/tuerchen15.jpg",
   //16: "Bild/tuerchen16.jpg",
@@ -49,17 +49,17 @@ const bilder = {
   //24: "Bild/tuerchen24.jpg",
 };
 
-// Popup-Elemente
 const popup = document.getElementById("popup");
 const popupImage = document.getElementById("popup-image");
+const popupVideo = document.getElementById("popup-video");
+const popupYoutube = document.getElementById("popup-youtube");
 const popupClose = document.getElementById("popup-close");
 
-// Schließen-Funktion
 popupClose.addEventListener("click", () => {
   popup.style.display = "none";
+  popupVideo.pause(); // Video stoppen beim Schließen
 });
 
-// Türchen erzeugen
 days.forEach(day => {
   const door = document.createElement("div");
   door.className = "door";
@@ -79,9 +79,23 @@ days.forEach(day => {
         localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
       }
 
-      // Popup mit Bild öffnen
-      if (bilder[day]) {
-        popupImage.src = bilder[day];
+      // Inhalte anzeigen
+      if (inhalte[day]) {
+        popupImage.style.display = "none";
+        popupVideo.style.display = "none";
+        popupYoutube.style.display = "none";
+
+        if (inhalte[day].type === "image") {
+          popupImage.src = inhalte[day].src;
+          popupImage.style.display = "block";
+        } else if (inhalte[day].type === "video") {
+          popupVideo.src = inhalte[day].src;
+          popupVideo.style.display = "block";
+        } else if (inhalte[day].type === "youtube") {
+          popupYoutube.src = inhalte[day].src;
+          popupYoutube.style.display = "block";
+        }
+
         popup.style.display = "block";
       } else {
         alert("🎁 Überraschung für Tag " + day);
@@ -93,11 +107,3 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
-
-
-
-
-
-
-
-
