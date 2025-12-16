@@ -39,10 +39,10 @@ const inhalte = {
  14: { type: "image", src: "Bild/tuerchen14.jpg" },
  15: { type: "image", src: "Bild/tuerchen15.jpg" },
  16: { type: "image", src: "Bild/tuerchen16.jpg" },
-  //17: "Bild/tuerchen17.jpg",
-  //18: "Bild/tuerchen18.jpg",
-  //19: "Bild/tuerchen19.jpg",
-  //20: "Bild/tuerchen20.jpg",
+ 17: { type: "image", src: "Bild/tuerchen17.jpg" },
+ 18: { type: "image", src: "Bild/tuerchen18.jpg" },
+ 19: { type: "image", src: "Bild/tuerchen19.jpg" },
+ 20: { type: "image", src: "Bild/tuerchen20.jpg" },
   //21: "Bild/tuerchen21.jpg",
   //22: "Bild/tuerchen22.jpg",
   //23: "Bild/tuerchen23.jpg",
@@ -107,4 +107,5 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
 
