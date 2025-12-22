@@ -46,7 +46,7 @@ const inhalte = {
  21: { type: "image", src: "Bild/tuerchen21.jpg" },
  22: { type: "image", src: "Bild/tuerchen22.jpg" },
  23: { type: "image", src: "Bild/tuerchen23.jpg" },
- 24: { type: "image", src: "Bild/tuerchen24.jpg" },
+ 24: { type: "video", src: "Videos/tuerchen24.mp4" },
 };
 
 const popup = document.getElementById("popup");
@@ -107,6 +107,7 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
 
 
 
