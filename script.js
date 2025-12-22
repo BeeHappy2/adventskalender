@@ -44,10 +44,9 @@ const inhalte = {
  19: { type: "image", src: "Bild/tuerchen19.jpg" },
  20: { type: "image", src: "Bild/tuerchen20.jpg" },
  21: { type: "image", src: "Bild/tuerchen21.jpg" },
-  //21: "Bild/tuerchen21.jpg",
-  //22: "Bild/tuerchen22.jpg",
-  //23: "Bild/tuerchen23.jpg",
-  //24: "Bild/tuerchen24.jpg",
+ 22: { type: "image", src: "Bild/tuerchen22.jpg" },
+ 23: { type: "image", src: "Bild/tuerchen23.jpg" },
+ 24: { type: "image", src: "Bild/tuerchen24.jpg" },
 };
 
 const popup = document.getElementById("popup");
@@ -108,6 +107,7 @@ days.forEach(day => {
 
   calendar.appendChild(door);
 });
+
 
 
 
